@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.test.movieapplication.screens.fragment.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/actionFromMainFragmentToDetailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim" />
+        <action
+            android:id="@+id/actionFromMainFragmentToFavoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/actionFromMainFragmentToSettingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/actionFromMainFragmentToAboutFragment"
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.test.movieapplication.screens.fragment.details.DetailsFragment"
+        tools:layout="@layout/fragment_details"
+        android:label="DetailsFragment" >
+        <action
+            android:id="@+id/actionFromDetailsFragmentToMainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/actionFromDetailsFragmentToImageFragment"
+            app:destination="@id/imageFragment" />
+        <action
+            android:id="@+id/actionFromDetailsFragmentToFavoriteFragment"
+            app:destination="@id/favoriteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.test.movieapplication.screens.fragment.favorite.FavoriteFragment"
+        tools:layout="@layout/fragment_favorite"
+        android:label="FavoriteFragment">
+        <action
+            android:id="@+id/actionFromFavoriteFragmentToDetailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim" />
+        <action
+            android:id="@+id/actionFromFavoriteFragmentToMainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/actionFromFavoriteFragmentToSettingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.test.movieapplication.screens.fragment.image.ImageFragment"
+        android:label="ImageFragment"
+        tools:layout="@layout/fragment_image" >
+        <action
+            android:id="@+id/actionFromImageFragmentToDetailsFragment"
+            app:destination="@id/detailsFragment"
+            app:popUpTo="@id/detailsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.test.movieapplication.screens.fragment.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/actionFromFavoriteFragmentToSettingsFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/actionFromSettingsFragmentToMainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/actionFromSettingsFragmentToAboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.test.movieapplication.screens.fragment.about.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/action_aboutFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+</navigation>

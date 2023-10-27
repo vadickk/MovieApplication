@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.fragment.about.AboutFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnBack"
+        style="@style/Widget.AppCompat.ActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutWithMyAccounts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/tvCreatedByVadim"
+        app:layout_constraintEnd_toEndOf="@+id/tvCreatedByVadim"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvCreatedByVadim">
+
+        <ImageView
+            android:id="@+id/btnGoToTelegram"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:src="@drawable/telegram_icon" />
+
+        <ImageView
+            android:id="@+id/btnGoToInstagram"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:src="@drawable/instagram_icon" />
+
+        <ImageView
+            android:id="@+id/btnGoToTwitter"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:src="@drawable/twitter_icon" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvCreatedByVadim"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/created_by"
+        android:textColor="@color/black"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewPoliticsSecurity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="10dp"
+        android:scrollbars="vertical"
+        android:text="@string/politics_security"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutWithMyAccounts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBack" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
